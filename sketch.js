@@ -125,3 +125,35 @@ function drawHandBresenham(x, y, angle, length, color) {
     point(X, Y);
   }
 }
+
+function updateClocks() {
+    let inputString = inputTime.value();
+    let inputComponents = inputString.split(":");
+    let newHour = int(inputComponents[0]);
+    let newMinute = int(inputComponents[1]);
+  
+    let now = new Date();
+    let currentHour = now.getHours();
+    let currentMinute = now.getMinutes();
+    let hourDifference = newHour - currentHour;
+    let minuteDifference = newMinute - currentMinute;
+  
+    hourOffset = hourDifference;
+    minuteOffset = minuteDifference;
+  }
+  
+  function updateClocks() {
+    let inputString = inputTime.value();
+    let inputComponents = inputString.split(":");
+    let newHour = int(inputComponents[0]);
+    let newMinute = int(inputComponents[1]);
+  
+    let now = new Date();
+    let currentHour = now.getHours();
+    let currentMinute = now.getMinutes();
+    let hourDifference = newHour - currentHour;
+    let minuteDifference = newMinute - currentMinute;
+  
+    hourOffset = hourDifference;
+    minuteOffset = minuteDifference;
+  }
