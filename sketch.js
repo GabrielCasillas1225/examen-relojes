@@ -68,3 +68,24 @@ function drawHandPuntoPendiente(x, y, angle, length, color) {
   strokeWeight(2);
   line(x, y, endX, endY);
 }
+
+function drawHandDDA(x, y, angle, length, color) {
+    let endX = x + cos(angle) * length;
+    let endY = y + sin(angle) * length;
+  
+    let dx = endX - x;
+    let dy = endY - y;
+    let steps = abs(dx) > abs(dy) ? abs(dx) : abs(dy);
+    let Xincrement = dx / steps;
+    let Yincrement = dy / steps;
+  
+    stroke(color);
+    strokeWeight(2);
+    let X = x;
+    let Y = y;
+    for (let i = 0; i <= steps; i++) {
+      point(X, Y);
+      X += Xincrement;
+      Y += Yincrement;
+    }
+  }
